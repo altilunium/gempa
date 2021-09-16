@@ -2,10 +2,15 @@
 <html>
     <head>
         <title>Gempa</title>
+        <style>
+            body {
+                font-family : sans-serif;
+            }
+        </style>
     </head>
     <body>
-        <h3>Data gempa-bumi terbaru</h3>
-        <span id="time"></span> : Magnitude <span id="mag"></span> (<span id="wil"></span>)
+        <h3>Gempa bumi terbaru</h3>
+        <span id="time"></span> : magnitude <span id="mag"></span> (<span id="wil"></span>)
         <div id="map"></div>
         <a href="https://data.bmkg.go.id/gempabumi">https://data.bmkg.go.id/gempabumi</a>
     </body>
@@ -13,10 +18,7 @@
     <script>
         fetch("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
         .then( (response) => response.json())
-        .then( 
-            
-            (data) => process(data))
-
+        .then((data) => process(data))
 
         function process(data){
             console.log(data)
@@ -31,3 +33,5 @@
         }
     </script>
 </html>
+
+
